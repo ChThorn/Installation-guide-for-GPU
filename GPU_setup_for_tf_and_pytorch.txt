@@ -1,0 +1,24 @@
+This tutorial is guide you how to install tensorflow and pytorch in different environment the same cuda.
+
+The installation precedure is follow below:
+
+**Setup for Pytorch
+-First, we have to check our NVIDIA driver that we installed for our systems by follow the command: nvidia-smi.
+
+The status should be showed as with version that our pc is using cuda(Ex. cuda 12.1, in my case).
+
+after that, here I used with miniconda environment and the procedure setup as follows:
+
+-First created environment by using this command: conda create -n environment_name python=version. Then we can activate this environment in order to access and process the installation. To activate this environment is use conda activate environment_name. 
+
+Also, if you want to delete or remove the environment that we created just type this command: conda env remove --name environment_name.
+
+-Second, to install pytorch based your current version cuda support which from the details you check of nvidia-smi, you can use this command to install the pytorch based GPU by following this command: conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia. Which you can check from this website (https://pytorch.org/get-started/locally/). Now you successfully install pytorch based on your cuda supported version.
+
+**Setup for tensorflow
+
+This part is continue from the above, but we focus on adding tensorflow to the different conda environment.
+
+In order to be more convenient or no conflict, you should create new environment that is for your tensorflow setup only.
+
+You can follow the above to create the environment of your tensorflow. Then, you have to activate to your tensorflow environment and do with pip (not conda), pip install tensorflow=2.9 (support for the latest of cuda version 11.2).
